@@ -43,6 +43,11 @@ Part_Hydraulique_Pct: Tracking the impact of regional geography on the energy mi
 
 
 --------- SQL Logic Breakdown ---------
+
+
+
+
+
 The query uses a CTE (Common Table Expression) named Monthly_Production to pre-calculate totals before computing percentages. This ensures better performance and cleaner code.
 
 WITH Monthly_Production AS (...): Defines a temporary result set (CTE) to handle raw aggregations.
@@ -62,3 +67,39 @@ NULLIF(Vol_Total_Prod, 0): A safety measure. If total production is zero (missin
 ROUND((... * 100.0) / ..., 1): Calculates the percentage share of each energy source, rounded to one decimal place. The 100.0 forces floating-point math for precision.
 
 ORDER BY Mois_Annee: Ensures the final output is sorted from the oldest to the most recent month.
+
+
+
+
+--------- SQL Query ---------
+
+
+
+
+
+WITH Monthly_Production AS (
+    SELECT 
+        substr("Date", 1, 7) AS Mois_Annee,
+        SUM("Nucléaire (MW)") AS Vol_Nucleaire,
+        SUM("Thermique (MW)") AS Vol_Thermique,
+        SUM("Hydraulique (MW)") AS Vol_Hydraulique,
+        SUM("Eolien (MW)") AS Vol_Eolien,
+        SUM("Solaire (MW)") AS Vol_Solaire,
+        SUM("Bioénergies (MW)") AS Vol_Bio,
+        (SUM("Nucléaire (MW)") + SUM("Thermique (MW)") + SUM("Hydraulique (MW)") + 
+         SUM("Eolien (MW)") + SUM("Solaire (MW)") + SUM("Bioénergies (MW)")) AS Vol_Total_Prod
+    FROM RTE_Data
+    WHERE substr("Date", 1, 4) BETWEEN '2013' AND '2024'
+    GROUP BY Mois_Annee
+)
+SELECT 
+    Mois_Annee,
+    Vol_Nucleaire,
+    Vol_Thermique,
+    Vol_Hydraulique,
+    Vol_Total_Prod,
+    ROUND((Vol_Nucleaire * 100.0) / NULLIF(Vol_Total_Prod, 0), 1) AS Part_Nucleaire_Pct,
+    ROUND((Vol_Thermique * 100.0) / NULLIF(Vol_Total_Prod, 0), 1) AS Part_Thermique_Pct,
+    ROUND((Vol_Hydraulique * 100.0) / NULLIF(Vol_Total_Prod, 0), 1) AS Part_Hydraulique_Pct
+FROM Monthly_Production
+ORDER BY Mois_Annee;
