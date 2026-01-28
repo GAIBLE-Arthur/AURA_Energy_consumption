@@ -1,6 +1,7 @@
 # AURA_Energy_consumption
 
-Project Overview
+Project Overview:
+
 This project analyzes the historical evolution of the electricity production mix in the Auvergne-Rhône-Alpes (AURA) region, France. Using high-resolution data from RTE France (éco2mix), the study covers over a decade of energy data to identify shifts in generation sources, seasonal trends, and the regional reliance on specific energy types.
 
 Objectives
