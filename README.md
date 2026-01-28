@@ -98,11 +98,11 @@ ORDER BY Mois_Annee;
 ![AURA Energy consumption](./Data_overview.png)
 
 
-Nuclear energy remains the structural base of the AURA mix, typically accounting for over 70% of total production, though significant dips are visible during the 2022 maintenance crises.
+Nuclear energy remains the structural base of the AURA mix, typically accounting for over 70% of total production.
 
-The hydraulic share shows strong seasonality, peaking during spring snowmelts and declining during summer droughts—a critical trend to monitor for regional energy security.
+The hydraulic share shows strong seasonality, peaking during spring snowmelts and declining during summer, a critical trend to monitor for regional energy security.
 
-Thermal production spikes correlate inversely with nuclear availability, highlighting its role as the regional "emergency" energy source.
+Thermal production correlate inversely with nuclear availability, highlighting its role as the regional "emergency" energy source.
 
 
 Want to see more ? 
