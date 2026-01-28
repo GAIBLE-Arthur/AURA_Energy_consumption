@@ -111,3 +111,9 @@ Nuclear energy remains the structural base of the AURA mix, typically accounting
 The hydraulic share shows strong seasonality, peaking during spring snowmelts and declining during summer droughts—a critical trend to monitor for regional energy security.
 
 Thermal production spikes correlate inversely with nuclear availability, highlighting its role as the regional "emergency" energy source.
+
+
+Want to see more ? 
+
+Please download the complete report : (./AURA_project.pdf)
+
