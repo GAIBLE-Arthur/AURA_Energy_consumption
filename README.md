@@ -72,11 +72,7 @@ ORDER BY Mois_Annee: Ensures the final output is sorted from the oldest to the m
 
 
 --------- SQL Query ---------
-
-
-
-
--- WITH Monthly_Production AS (
+WITH Monthly_Production AS (
     SELECT 
         substr("Date", 1, 7) AS Mois_Annee,
         SUM("Nucléaire (MW)") AS Vol_Nucleaire,
@@ -102,10 +98,6 @@ SELECT
     ROUND((Vol_Hydraulique * 100.0) / NULLIF(Vol_Total_Prod, 0), 1) AS Part_Hydraulique_Pct
 FROM Monthly_Production
 ORDER BY Mois_Annee;
-
-
-
-
 
 
 --------- Key findinds with Power BI  ---------
