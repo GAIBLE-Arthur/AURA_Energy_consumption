@@ -30,3 +30,35 @@ Vol_Total_Prod: Aggregate of all generation sources (Nuclear, Thermal, Hydro, Wi
 Part_Nucleaire_Pct: Relative share of nuclear energy (the backbone of the AURA grid).
 
 Part_Hydraulique_Pct: Tracking the impact of regional geography on the energy mix.
+
+
+
+
+
+
+
+
+
+
+
+
+--------- SQL Logic Breakdown ---------
+The query uses a CTE (Common Table Expression) named Monthly_Production to pre-calculate totals before computing percentages. This ensures better performance and cleaner code.
+
+WITH Monthly_Production AS (...): Defines a temporary result set (CTE) to handle raw aggregations.
+
+substr("Date", 1, 7) AS Mois_Annee: Extracts the year and month (YYYY-MM) from the date string to group the data chronologically.
+
+SUM("Source (MW)"): Aggregates the power generation for each energy type (Nuclear, Thermal, Hydro, etc.) for that specific month.
+
+Vol_Total_Prod: Sums all individual generation sources to create a denominator for market share calculations.
+
+WHERE ... BETWEEN '2013' AND '2024': Filters the dataset to a specific 11-year window, ensuring data consistency.
+
+GROUP BY Mois_Annee: Collapses the granular (usually half-hourly) RTE data into a single row per month.
+
+NULLIF(Vol_Total_Prod, 0): A safety measure. If total production is zero (missing data), it returns NULL instead of crashing the query with a "Division by Zero" error.
+
+ROUND((... * 100.0) / ..., 1): Calculates the percentage share of each energy source, rounded to one decimal place. The 100.0 forces floating-point math for precision.
+
+ORDER BY Mois_Annee: Ensures the final output is sorted from the oldest to the most recent month.
