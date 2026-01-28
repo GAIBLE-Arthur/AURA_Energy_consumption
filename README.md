@@ -76,8 +76,7 @@ ORDER BY Mois_Annee: Ensures the final output is sorted from the oldest to the m
 
 
 
-
-WITH Monthly_Production AS (
+-- WITH Monthly_Production AS (
     SELECT 
         substr("Date", 1, 7) AS Mois_Annee,
         SUM("Nucléaire (MW)") AS Vol_Nucleaire,
