@@ -115,5 +115,5 @@ Thermal production spikes correlate inversely with nuclear availability, highlig
 
 Want to see more ? 
 
-Please download the complete report : (./AURA_project.pdf)
+Please download the complete report : ![AURA Energy consumption](./AURA_project.pdf)
 
