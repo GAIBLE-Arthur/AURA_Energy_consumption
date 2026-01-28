@@ -95,6 +95,8 @@ ORDER BY Mois_Annee;
 --------- Key findinds with Power BI  ---------
 
 
+
+
 ![AURA Energy consumption](./Data_overview.png)
 
 
