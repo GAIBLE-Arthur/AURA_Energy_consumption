@@ -103,6 +103,9 @@ ORDER BY Mois_Annee;
 --------- Key findinds with Power BI  ---------
 
 
+![AURA Energy consumption](./Data_overview.png)
+
+
 Nuclear energy remains the structural base of the AURA mix, typically accounting for over 70% of total production, though significant dips are visible during the 2022 maintenance crises.
 
 The hydraulic share shows strong seasonality, peaking during spring snowmelts and declining during summer droughts—a critical trend to monitor for regional energy security.
