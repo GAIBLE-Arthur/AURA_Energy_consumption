@@ -2,16 +2,18 @@
 
 Project Overview:
 
-This project analyzes the historical evolution of the electricity production mix in the Auvergne-Rhône-Alpes (AURA) region, France. Using high-resolution data from RTE France (éco2mix), the study covers over a decade of energy data to identify shifts in generation sources, seasonal trends, and the regional reliance on specific energy types.
+This project analyzes the historical evolution of the electricity production mix in the Auvergne-Rhône-Alpes (AURA) region, France. Using  data from RTE France (éco2mix), the study covers over a decade of energy data to identify shifts in generation sources, seasonal trends, and the regional reliance on specific energy types.
 
-Objectives
-Quantify Production Shares: Calculate the monthly percentage of Nuclear, Thermal, and Hydraulic power within the total regional output.
+Objectives:
 
-Temporal Evolution: Observe the stability and changes in the energy mix from January 2013 to December 2024.
+- Calculate the monthly percentage of Nuclear, Thermal, and Hydraulic power within the total regional output.
 
-Data Reliability: Clean and process raw CSV exports from RTE into a structured SQLite database for efficient querying.
+- Observe the stability and changes in the energy mix from January 2013 to December 2024.
+
+- Clean and process raw CSV exports from RTE into a structured SQLite database for efficient querying.
 
 Data Source
+
 Provider: RTE France - éco2mix
 
 Scope: Regional (AURA)
@@ -32,20 +34,7 @@ Part_Nucleaire_Pct: Relative share of nuclear energy (the backbone of the AURA g
 Part_Hydraulique_Pct: Tracking the impact of regional geography on the energy mix.
 
 
-
-
-
-
-
-
-
-
-
-
 --------- SQL Logic Breakdown ---------
-
-
-
 
 
 The query uses a CTE (Common Table Expression) named Monthly_Production to pre-calculate totals before computing percentages. This ensures better performance and cleaner code.
