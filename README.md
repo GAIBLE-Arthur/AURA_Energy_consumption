@@ -27,11 +27,11 @@ The core analysis is performed via SQL, calculating monthly aggregates and calcu
 
 Key Metrics Tracked:
 
-Vol_Total_Prod: Aggregate of all generation sources (Nuclear, Thermal, Hydro, Wind, Solar, Bioenergy).
+- Vol_Total_Prod: Aggregate of all generation sources (Nuclear, Thermal, Hydro, Wind, Solar, Bioenergy).
 
-Part_Nucleaire_Pct: Relative share of nuclear energy (the backbone of the AURA grid).
+- Part_Nucleaire_Pct: Relative share of nuclear energy (the backbone of the AURA grid).
 
-Part_Hydraulique_Pct: Tracking the impact of regional geography on the energy mix.
+- Part_Hydraulique_Pct: Tracking the impact of regional geography on the energy mix.
 
 
 --------- SQL Logic Breakdown ---------
