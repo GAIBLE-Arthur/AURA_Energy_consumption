@@ -92,7 +92,7 @@ ORDER BY Mois_Annee;
 
 
 
---------- Key findinds with Power BI  ---------
+--------- Key findings with Power BI  ---------
 
 
 
