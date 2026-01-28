@@ -103,3 +103,17 @@ SELECT
     ROUND((Vol_Hydraulique * 100.0) / NULLIF(Vol_Total_Prod, 0), 1) AS Part_Hydraulique_Pct
 FROM Monthly_Production
 ORDER BY Mois_Annee;
+
+
+
+
+
+
+--------- Key findinds with Power BI  ---------
+
+
+Nuclear energy remains the structural base of the AURA mix, typically accounting for over 70% of total production, though significant dips are visible during the 2022 maintenance crises.
+
+The hydraulic share shows strong seasonality, peaking during spring snowmelts and declining during summer droughts—a critical trend to monitor for regional energy security.
+
+Thermal production spikes correlate inversely with nuclear availability, highlighting its role as the regional "emergency" energy source.
