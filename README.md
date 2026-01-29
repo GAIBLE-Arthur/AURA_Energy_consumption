@@ -15,6 +15,7 @@ Objectives:
 Data Source
 
 Provider: RTE France - éco2mix
+https://www.rte-france.com/donnees-publications/eco2mix-donnees-temps-reel
 
 Scope: Regional (AURA)
 
